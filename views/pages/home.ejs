@@ -1,4 +1,13 @@
-<%- include("header") -%>
+<%- include("header"); -%>
+
     <h1>Home</h1>
     <p> <%= homeStartingContent %></p>
-<%- include("footer") -%>
+   
+   <% Posts.forEach(function(post){ %>
+    <h1><%= post.title %> </h1>
+       <p> <%= post.content.substring(0, 100) + "..."  %>
+        <a href="/post/ <%= post.title %> ">read more</a> 
+    </p>  
+    <%})%>
+
+<%- include("footer"); -%>
